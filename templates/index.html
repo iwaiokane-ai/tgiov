@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>🎵 Music Service</h1>
+  <p class="muted">Каталог музыкальных треков: ищите по жанру, исполнителю и году выпуска.</p>
+  <a class="btn" href="/tracks">Открыть каталог</a>
+</section>
+
+<div class="stats">
+  <div class="card stat"><b>{{ total }}</b>треков</div>
+  <div class="card stat"><b>{{ genres_total }}</b>жанров</div>
+</div>
+
+<h2>Трек дня</h2>
+<div class="card">
+  <h3 style="margin-top:0">{{ featured.title }}</h3>
+  <p>{{ featured.artist }} · {{ featured.year }} · <span class="tag">{{ featured.genre }}</span> · {{ featured.duration_sec|mmss }}</p>
+  <a href="/tracks/{{ featured.id }}">Подробнее →</a>
+</div>
+{% endblock %}
